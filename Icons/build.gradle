@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+android {
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/drawables/blue_dark',
+                            'src/main/res/drawables/blue_style',
+                            'src/main/res/drawables/marron',
+                            'src/main/res/drawables/red',
+                            'src/main/res/drawables/white',
+                            'src/main/res/drawables/black',
+                            'src/main/res/drawables/gray',
+                            'src/main/res/drawables',
+
+                            'src/main/res'
+                    ]
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
